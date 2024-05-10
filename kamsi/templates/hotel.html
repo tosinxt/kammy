@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Selection</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Hotel Selection</span>
+    <div class="navbar-text">
+      Location: <strong>{{ location }}</strong>, Check-in Date: <strong>{{ checkin }}</strong>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <div class="row">
+      {% for hotel in hotels %}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{{ hotel.image }}" class="card-img-top" alt="{{ hotel.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ hotel.name }}</h5>
+            <p class="card-text">{{ hotel.description }}</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Rating: {{ hotel.rating }}</li>
+              <li class="list-group-item">Amenities: {{ hotel.amenities }}</li>
+              <li class="list-group-item">Price: ${{ hotel.price }}/night</li>
+              <li class="list-group-item">Location: {{ hotel.location }}</li>
+            </ul>
+            <i class="far fa-heart float-right mt-2"></i> <!-- Heart icon -->
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script> <!-- Font Awesome JS -->
+</body>
+</html>

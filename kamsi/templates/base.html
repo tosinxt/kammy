@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* CSS for the fixed bottom navigation bar */
+        .navbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .navbar a:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Content goes here -->
+{% block content %}
+{% endblock %}
+
+<!-- Navigation bar -->
+<div class="navbar">
+    <a href="{{ url_for('profile') }}"><i class="fas fa-user"></i> Profile</a>
+    <a href="{{ url_for('saved') }}"><i class="fas fa-bookmark"></i> Saved</a>
+    <a href="{{ url_for('booking') }}"><i class="fas fa-calendar-check"></i> Booking</a>
+    <a href="{{ url_for('search') }}"><i class="fas fa-search"></i> Search</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Details</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Hotel Details</span>
+    <a href="hotel.html" class="navbar-text">Back to Search</a>
+  </nav>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Hotel Name</h2>
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <img src="hotel1.jpg" class="img-fluid" alt="Hotel">
+          </div>
+          <div class="col-md-8">
+            <p><i class="fas fa-map-marker-alt"></i> Location: Central Park</p>
+            <p><i class="fas fa-star"></i> Rating: 4.5</p>
+            <p><i class="fas fa-coffee"></i> Amenities: Pool, Gym, Spa</p>
+            <p><i class="fas fa-money-bill-wave"></i> Price: $150/night</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bookingModal">Book Now</button> <!-- Book Now Button -->
+            <i class="far fa-heart ml-2" data-toggle="modal" data-target="#bookingModal"></i> <!-- Heart Icon -->
+          </div>
+        </div>
+        <h3>Description</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h3>Location</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h3>Amenities</h3>
+        <ul>
+          <li><i class="fas fa-swimming-pool"></i> Pool</li>
+          <li><i class="fas fa-dumbbell"></i> Gym</li>
+          <li><i class="fas fa-spa"></i> Spa</li>
+          <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
+        </ul>
+      </div>
+      <!-- Add more hotel details here -->
+    </div>
+  </div>
+
+  <!-- Booking Modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookingModalLabel">Confirm Booking</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="guests">Number of Guests</label>
+              <input type="number" class="form-control" id="guests" min="1">
+            </div>
+            <div class="form-group">
+              <label for="checkin">Check-in Date</label>
+              <input type="date" class="form-control" id="checkin">
+            </div>
+            <div class="form-group">
+              <label for="checkout">Check-out Date</label>
+              <input type="date" class="form-control" id="checkout">
+            </div>
+            <div class="form-group">
+              <label for="roomType">Room Type</label>
+              <select class="form-control" id="roomType">
+                <option>Standard</option>
+                <option>Deluxe</option>
+                <option>Suite</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirm Booking</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script> <!-- Font Awesome JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

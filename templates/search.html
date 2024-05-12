@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Search</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4>Hotel Search</h4>
+          </div>
+          <div class="card-body">
+            <form action="{{ url_for('search_hotels') }}" method="POST">
+              <div class="form-group">
+                <label for="location">Location</label>
+                <select class="form-control" id="location" name="location">
+                  <option value="">Select Location</option>
+                  <option value="New York City, USA">New York City, USA</option>
+                  <option value="San Francisco, USA">San Francisco, USA</option>
+                  <option value="London, UK">London, UK</option>
+                  <option value="Paris, France">Paris, France</option>
+                  <option value="Tokyo, Japan">Tokyo, Japan</option>
+                  <option value="Sydney, Australia">Sydney, Australia</option>
+                  <option value="Rome, Italy">Rome, Italy</option>
+                  <option value="Dubai, UAE">Dubai, UAE</option>
+                  <option value="Miami, USA">Miami, USA</option>
+                  <option value="Vancouver, Canada">Vancouver, Canada</option>
+                  <option value="Hong Kong, China">Hong Kong, China</option>
+                  <option value="Seoul, South Korea">Seoul, South Korea</option>
+                  <option value="Berlin, Germany">Berlin, Germany</option>
+                  <option value="Bangkok, Thailand">Bangkok, Thailand</option>
+                  <option value="Mumbai, India">Mumbai, India</option>
+                  <option value="Singapore">Singapore</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="checkin">Check-in Date</label>
+                  <input type="date" class="form-control" id="checkin" name="checkin">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="checkout">Check-out Date</label>
+                  <input type="date" class="form-control" id="checkout" name="checkout">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="adults">Adults</label>
+                  <input type="number" class="form-control" id="adults" name="adults" min="1">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="kids">Kids</label>
+                  <input type="number" class="form-control" id="kids" name="kids" min="0">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="rooms">Rooms</label>
+                  <input type="number" class="form-control" id="rooms" name="rooms" min="1">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include 'base.html' %}
+</body>
+</html>

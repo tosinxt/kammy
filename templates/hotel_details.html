@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Details</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Hotel Details</span>
+    <a href="{{ url_for('search') }}" class="navbar-text">Back to Search</a>
+  </nav>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>{{ hotel.name }}</h2>
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <img src="{{ hotel.image }}" class="img-fluid" alt="Hotel">
+          </div>
+          <div class="col-md-8">
+            <p><i class="fas fa-map-marker-alt"></i> Location: {{ hotel.location }}</p>
+            <p><i class="fas fa-star"></i> Rating: {{ hotel.rating }}</p>
+            <p><i class="fas fa-coffee"></i> Amenities: 
+              {% if hotel.amenities %}
+                {% for amenity in hotel.amenities %}
+                  {{ amenity }}
+                {% endfor %}
+              {% else %}
+                No amenities available
+              {% endif %}
+            </p>
+                        <p><i class="fas fa-money-bill-wave"></i> Price: ${{ hotel.price }}/night</p>
+            <form action="{{ url_for('booking', hotel_id=hotel_id) }}" method="GET">
+               <!-- Pass the hotel_id as a query parameter -->
+               <input type="hidden" name="hotel_id" value="{{ hotel_id }}">
+               <button type="submit" class="btn btn-primary">Book Now</button>
+            </form>
+            <!-- Book Now Button -->
+            <i class="far fa-heart ml-2"></i> <!-- Heart Icon -->
+          </div>
+        </div>
+        <!-- Add more hotel details here -->
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script> <!-- Font Awesome JS -->
+  {% include 'base.html' %}
+</body>
+</html>

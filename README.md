@@ -9,7 +9,7 @@ This is a simple hotel booking system built using Flask, MySQL, and HTML templat
 Clone this repository to your local machine.
 
 ```bash
-git clone https://github.com/your-username/hotel-booking-system.git
+git clone https://github.com/tosinxt/kammy.git
 ```
 
 ### 2. Install Dependencies

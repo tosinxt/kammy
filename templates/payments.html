@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payments</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Payments</span>
+  </nav>
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2>Payment Form</h2>
+        <form action="/payments" method="POST">
+          <div class="form-group">
+            <label for="card_number">Card Number</label>
+            <input type="text" class="form-control" id="card_number" name="card_number" placeholder="Enter card number" required>
+          </div>
+          <div class="form-group">
+            <label for="expiry_date">Expiry Date</label>
+            <input type="text" class="form-control" id="expiry_date" name="expiry_date" placeholder="MM/YY" required>
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" class="form-control" id="cvv" name="cvv" placeholder="Enter CVV" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Payment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

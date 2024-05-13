@@ -46,3 +46,22 @@ CREATE TABLE booking_details (
     billing_address VARCHAR(255) NOT NULL,
     FOREIGN KEY (booking_id) REFERENCES bookings(booking_id)
 );
+
+
+CREATE TABLE `reservations` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `full_name` text NOT NULL,
+  `email` text NOT NULL,
+  `country_code` text NOT NULL,
+  `phone_number` text NOT NULL,
+  `address` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE payment_details (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    card_number VARCHAR(16) NOT NULL,
+    expiry_date VARCHAR(5) NOT NULL,
+    cvv VARCHAR(3) NOT NULL,
+    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
